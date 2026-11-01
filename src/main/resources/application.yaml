@@ -4,8 +4,8 @@ spring:
 
   datasource:
     url: ${DB_URL:jdbc:postgresql://localhost:5432/banking_customers_db}
-    username: postgres
-    password: root
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:root}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -18,10 +18,10 @@ spring:
         default_schema: customers
 
   rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
 
 server:
   port: ${SERVER_PORT:8081}
@@ -30,4 +30,4 @@ server:
 
 customers:
   messaging:
-    exchange: customers.events
+    exchange: ${CUSTOMERS_EXCHANGE:customers.events}

@@ -1,0 +1,406 @@
+{
+  "info": {
+    "_postman_id": "93e350be-a57e-4f03-beea-392f70891fa2",
+    "name": "banking-customers-service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57983859"
+  },
+  "item": [
+    {
+      "name": "Clientes",
+      "item": [
+        {
+          "name": "Crear Cliente",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n{\r\n  \"nombre\": \"Carlos Andres Rodriguez\",\r\n  \"genero\": \"MASCULINO\",\r\n  \"edad\": 30,\r\n  \"identificacion\": \"1098765432\",\r\n  \"direccion\": \"Calle 15 # 20-30\",\r\n  \"telefono\": \"3001234567\",\r\n  \"contrasena\": \"Prueba123\",\r\n  \"estado\": true\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/clientes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "clientes"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "201 Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "\r\n{\r\n  \"nombre\": \"Carlos Andres Rodriguez\",\r\n  \"genero\": \"MASCULINO\",\r\n  \"edad\": 30,\r\n  \"identificacion\": \"1098765432\",\r\n  \"direccion\": \"Calle 15 # 20-30\",\r\n  \"telefono\": \"3001234567\",\r\n  \"contrasena\": \"Prueba123\",\r\n  \"estado\": true\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/clientes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "clientes"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 31 Oct 2026 22:12:02 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"clienteId\": 4,\n  \"personaId\": 4,\n  \"nombre\": \"Carlos Andres Rodriguez\",\n  \"genero\": \"MASCULINO\",\n  \"edad\": 30,\n  \"identificacion\": \"1098765432\",\n  \"direccion\": \"Calle 15 # 20-30\",\n  \"telefono\": \"3001234567\",\n  \"estado\": true\n}"
+            }
+          ]
+        },
+        {
+          "name": "Desactivar cliente",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"estado\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/clientes/4/estado",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "clientes",
+                "4",
+                "estado"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 ok",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"estado\": false\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/clientes/4/estado",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "clientes",
+                    "4",
+                    "estado"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Nov 2026 16:53:35 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"clienteId\": 4,\n  \"personaId\": 4,\n  \"nombre\": \"Carlos Andres Rodriguez\",\n  \"genero\": \"MASCULINO\",\n  \"edad\": 30,\n  \"identificacion\": \"1098765432\",\n  \"direccion\": \"Calle 15 # 20-30\",\n  \"telefono\": \"3001234567\",\n  \"estado\": false\n}"
+            }
+          ]
+        },
+        {
+          "name": "Activar cliente",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"estado\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/clientes/4/estado",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "clientes",
+                "4",
+                "estado"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 ok",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"estado\": false\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/clientes/4/estado",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "clientes",
+                    "4",
+                    "estado"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Nov 2026 16:53:35 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"clienteId\": 4,\n  \"personaId\": 4,\n  \"nombre\": \"Carlos Andres Rodriguez\",\n  \"genero\": \"MASCULINO\",\n  \"edad\": 30,\n  \"identificacion\": \"1098765432\",\n  \"direccion\": \"Calle 15 # 20-30\",\n  \"telefono\": \"3001234567\",\n  \"estado\": false\n}"
+            },
+            {
+              "name": "200 ok",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"estado\": true\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/clientes/4/estado",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "clientes",
+                    "4",
+                    "estado"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Nov 2026 16:54:18 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"clienteId\": 4,\n  \"personaId\": 4,\n  \"nombre\": \"Carlos Andres Rodriguez\",\n  \"genero\": \"MASCULINO\",\n  \"edad\": 30,\n  \"identificacion\": \"1098765432\",\n  \"direccion\": \"Calle 15 # 20-30\",\n  \"telefono\": \"3001234567\",\n  \"estado\": true\n}"
+            }
+          ]
+        },
+        {
+          "name": "Listar Clientes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/clientes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "clientes"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 ok",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/clientes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "clientes"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Nov 2026 22:17:51 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"clienteId\": 1,\n    \"personaId\": 1,\n    \"nombre\": \"José Lema\",\n    \"genero\": \"Masculino\",\n    \"edad\": 35,\n    \"identificacion\": \"CLI-0001\",\n    \"direccion\": \"Otavalo sn y principal\",\n    \"telefono\": \"098254785\",\n    \"estado\": true\n  },\n  {\n    \"clienteId\": 2,\n    \"personaId\": 2,\n    \"nombre\": \"Marianela Montalvo\",\n    \"genero\": \"Femenino\",\n    \"edad\": 30,\n    \"identificacion\": \"CLI-0002\",\n    \"direccion\": \"Amazonas y NNUU\",\n    \"telefono\": \"097548965\",\n    \"estado\": true\n  },\n  {\n    \"clienteId\": 3,\n    \"personaId\": 3,\n    \"nombre\": \"Juan Osorio\",\n    \"genero\": \"Masculino\",\n    \"edad\": 28,\n    \"identificacion\": \"CLI-0003\",\n    \"direccion\": \"13 de junio y equinoccial\",\n    \"telefono\": \"098874587\",\n    \"estado\": true\n  },\n  {\n    \"clienteId\": 5,\n    \"personaId\": 5,\n    \"nombre\": \"Daniel Perez\",\n    \"genero\": \"MASCULINO\",\n    \"edad\": 30,\n    \"identificacion\": \"1055765432\",\n    \"direccion\": \"Calle 15 # 20-30\",\n    \"telefono\": \"3001237654\",\n    \"estado\": true\n  },\n  {\n    \"clienteId\": 4,\n    \"personaId\": 4,\n    \"nombre\": \"Carlos Andres Rodriguez\",\n    \"genero\": \"MASCULINO\",\n    \"edad\": 30,\n    \"identificacion\": \"1098765432\",\n    \"direccion\": \"Calle 15 # 20-30\",\n    \"telefono\": \"3001234567\",\n    \"estado\": true\n  }\n]"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    }
+  ]
+}
